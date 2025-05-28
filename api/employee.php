@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json');
 
-// Simple backend validation function
+//backend validation function
 function validate($data) {
     $errors = [];
     if(empty($data['name']) || strlen($data['name']) > 100) $errors[] = "Invalid name";
@@ -35,7 +35,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-    // Save to JSON file
+    // Save to JSON file into employees.json
     $file = __DIR__ . '/../data/employees.json';
     if(!is_dir(dirname($file))) mkdir(dirname($file), 0777, true);
 
